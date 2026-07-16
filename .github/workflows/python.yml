@@ -25,5 +25,5 @@ jobs:
             pip install -r requirements.txt
           fi
       - run: pip install flake8 pytest
-      - run: flake8 .
-      - run: pytest
+      - run: flake8 . --exclude=__pycache__,.venv,.git
+      - run: python -m pytest tests/ -v
